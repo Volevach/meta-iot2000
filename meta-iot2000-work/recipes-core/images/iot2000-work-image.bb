@@ -1,1 +1,1 @@
-require iot2000-example-image.inc
+require iot2000-work-image.inc

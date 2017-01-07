@@ -17,7 +17,6 @@ FILES_${PN}-dbg += "${INSTALLDIR}/.debug"
 
 S = "${WORKDIR}/galileo-target"
 
-RDEPENDS_${PN} += "uclibc uclibc-libpthread uclibc-libm uclibc-binlibs"
 RDEPENDS_${PN} += "galileogen2-fake galileo-uio-gpio galileo-spi1-spidev"
 RDEPENDS_${PN} += "acm-gadget"
 

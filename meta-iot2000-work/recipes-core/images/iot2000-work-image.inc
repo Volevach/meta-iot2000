@@ -1,6 +1,6 @@
 require  recipes-core/images/core-image-minimal.bb
 
-DESCRIPTION = "Example image for the IOT2000 platform"
+DESCRIPTION = "Testing work image for the IOT2000 platform"
 
 IMAGE_FSTYPES_append_iot2000 = " wic"
 
@@ -35,3 +35,4 @@ IMAGE_INSTALL_append = " firmware-nonfree"
 IMAGE_INSTALL_append = " iot2000setup"
 IMAGE_INSTALL_append = " sqlite3"
 IMAGE_INSTALL_append = " i2c-tools"
+IMAGE_INSTALL_append = " htop vim mc"

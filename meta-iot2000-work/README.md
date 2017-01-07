@@ -1,4 +1,6 @@
-This README file contains information on building the meta-iot2000-example.
+This README file contains information on building the meta-iot2000-work.
+
+This is a fork of the original meta-iot-example image
 
 Dependencies
 ============
@@ -8,15 +10,15 @@ This layer depends on:
 ```
   URI: git://git.yoctoproject.org/poky
   layers: meta, meta-yocto, meta-yocto-bsp
-  branch: krogoth
+  branch: morty
 
   URI: git://git.openembedded.org/meta-openembedded
   layers: meta-oe
-  branch: krogoth
+  branch: morty
 
   URI: git://git.yoctoproject.org/meta-intel
   layers: meta-intel
-  branch: krogoth
+  branch: morty
 
   URI: git://git.yoctoproject.org/meta-java
   layers: meta-java
@@ -26,13 +28,13 @@ This layer depends on:
   layers: meta-intel-iot-middleware
   branch: master
 
-  URI: git://github.com/siemens/meta-iot2000
+  URI: git://github.com/Volevach/meta-iot2000
   layers: meta-iot2000-bsp
   branch: master
 ```
 
 
-Building the meta-iot2000 Example Image Layer
+Building the meta-iot2000 Work Image for testing
 =============================================
 
 This layer builds upon the meta-iot2000-bsp layer and shares its [dependencies
@@ -44,16 +46,11 @@ additional / differing steps.
 Run additional commands to clone and checkout further dependencies.
 
 ```shell
-$ git clone git://git.openembedded.org/meta-openembedded poky/meta-oe -b krogoth
+$ git clone git://git.openembedded.org/meta-openembedded poky/meta-oe -b morty
 $ git clone git://git.yoctoproject.org/meta-java poky/meta-java
-$ git clone git://git.yoctoproject.org/meta-intel-iot-middleware poky/meta-intel-iot-middleware -b master
+$ git clone git://git.yoctoproject.org/meta-intel-iot-middleware poky/meta-intel-iot-middleware -b morty
 ```
 
-```shell
-$ git -C poky/meta-oe checkout 247b1267bbe9
-$ git -C poky/meta-java checkout 9edf7d5aa5bd
-$ git -C poky/meta-intel-iot-middleware checkout 821cf14c8304
-```
 
 Then download meta-iot2000 (if not done already) and enter the build
 environment.
@@ -72,7 +69,7 @@ environment.
 +  /home/build/poky/meta-java \
 +  /home/build/poky/meta-intel-iot-middleware \
 +  /home/build/poky/meta-iot2000/meta-iot2000-bsp \
-+  /home/build/poky/meta-iot2000/meta-iot2000-example \
++  /home/build/poky/meta-iot2000/meta-iot2000-work \
    "
 ```
 
@@ -102,7 +99,7 @@ This configures yocto to use the ipk format to build the image itself, so opkg k
 ## Create Example Image:
 
 ```shell
-$ bitbake iot2000-example-image
+$ bitbake iot2000-work-image
 
 ```
 
@@ -114,7 +111,7 @@ Under Linux, insert an unused SD card. Assuming the SD card takes device
 /dev/mmcblk0, use dd to copy the image to it. For example:
 
 ```shell
-$ sudo dd if=tmp/deploy/images/iot2000/iot2000-example-image-iot2000.wic of=/dev/mmcblk0 bs=4M oflag=sync
+$ sudo dd if=tmp/deploy/images/iot2000/iot2000-work-image-iot2000.wic of=/dev/mmcblk0 bs=4M oflag=sync
 ```
 
 The image starts with a preconfigured IP 192.168.200.1 on the first Ethernet
