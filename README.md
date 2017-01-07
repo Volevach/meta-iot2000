@@ -4,7 +4,7 @@ IOT2000 Board Support Package
 This packages contains the following elements:
 
 - meta-iot2000-bsp
-- meta-iot2000-example
+- meta-iot2000-work
 
 For updates, please visit https://github.com/siemens/meta-iot2000. We are
 also accepting issue reports, feature suggestions and patches this way.
@@ -20,14 +20,14 @@ configurations and tools and will emit a bootable SD card image.
 For further details, see [BSP readme](meta-iot2000-bsp/README.md).
 
 
-meta-iot2000-example
+meta-iot2000-work
 --------------------
 
-This Yocto layer builds on top of meta-iot2000-bsp, providing an exemplary image
+This Yocto layer builds on top of meta-iot2000-bsp, providing a testing image
 with additional tools and services to exploit features of the IOT2000
 conveniently.
 
 This layer shall only be considered as a starting point for own developments. It
 is not configured to provide product-grade maturity and security.
 
-For further details, see [example image readme](meta-iot2000-example/README.md).
+For further details, see [example image readme](meta-iot2000-work/README.md).
